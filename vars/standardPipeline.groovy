@@ -14,17 +14,17 @@ def call(body) {
                     checkout scm
                 }
                 stage ('Build') {
-                    "echo 'building ${config.projectName} ...'"
+                    echo 'building ${config.projectName} ...'
                 }
                 stage ('Tests') {
                     parallel 'static': {
-                        "echo 'shell scripts to run static tests...'"
+                        echo 'shell scripts to run static tests...'
                     },
                     'unit': {
-                         "echo 'shell scripts to run unit tests...'"
+                         echo 'shell scripts to run unit tests...'
                     },
                     'integration': {
-                        "echo 'shell scripts to run integration tests...'"
+                        echo 'shell scripts to run integration tests...'
                     }
                 }
                 
