@@ -14,7 +14,7 @@ def call(body) {
                     checkout scm
                 }
                 stage ('Build') {
-                    echo 'building ${config.projectName} ...'
+                    bat ${projectName}
                 }
                 stage ('Tests') {
                     parallel 'static': {
