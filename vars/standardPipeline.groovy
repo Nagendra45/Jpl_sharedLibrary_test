@@ -27,9 +27,7 @@ def call(body) {
                         sh "echo 'shell scripts to run integration tests...'"
                     }
                 }
-                stage ('Deploy') {
-                    sh "echo 'deploying to server ${config.serverDomain}...'"
-                }
+                
             } catch (err) {
                 currentBuild.result = 'FAILED'
                 throw err
